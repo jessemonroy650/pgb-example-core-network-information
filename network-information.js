@@ -12,9 +12,8 @@ var networkInformationPlugin = {
     hook : function (statusId, connectId) {
         document.getElementById('status0').innerHTML = "hook() called";
         //
-        globalizationPlugin.connectStatusId = statusId;
-        globalizationPlugin.connectTypeId   = connectId;
-        document.getElementById('status0').innerHTML = "hooks Ids done";
+        networkInformationPlugin.connectStatusId = statusId;
+        networkInformationPlugin.connectTypeId   = connectId;
         document.addEventListener("offline", networkInformationPlugin.onOffline, false);
         document.addEventListener("online", networkInformationPlugin.onOnline, false);
         document.getElementById('status0').innerHTML = "hooks in place";
