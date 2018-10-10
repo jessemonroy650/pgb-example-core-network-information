@@ -38,11 +38,13 @@ var networkInformationPlugin = {
     //
     onOffline : function () {
         document.getElementById(networkInformationPlugin.connectStatusId).innerHTML = 'Offline';
+        document.getElementById(networkInformationPlugin.connectStatusId).setAttribute("style", "color:#ffffff;background-color:#ff0022;");
         networkInformationPlugin.updateConnectionState();
     },
     //
     onOnline : function () {
         document.getElementById(networkInformationPlugin.connectStatusId).innerHTML = 'Online';
+        document.getElementById(networkInformationPlugin.connectStatusId).setAttribute("style", "backgroundColor:#22ff44;");
         networkInformationPlugin.updateConnectionState();
     }
     //
