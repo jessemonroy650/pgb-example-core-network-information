@@ -8,13 +8,16 @@ var networkInformationPlugin = {
         //
         return JSON.stringify(navigator.connection);
     },
+    //
     hook : function (statusId, connectId) {
         document.getElementById('status0').innerHTML = "hook() called";
         //
         globalizationPlugin.connectStatusId = statusId;
         globalizationPlugin.connectTypeId   = connectId;
+        document.getElementById('status0').innerHTML = "hooks Ids done";
         document.addEventListener("offline", networkInformationPlugin.onOffline, false);
         document.addEventListener("online", networkInformationPlugin.onOnline, false);
+        document.getElementById('status0').innerHTML = "hooks in place";
         //
         networkInformationPlugin.updateConnectionState();
     },
