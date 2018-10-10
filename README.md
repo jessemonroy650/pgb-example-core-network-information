@@ -1,6 +1,27 @@
 # pgb-example-core-network-information
-PGB Example Core using the Cordova 'Network-information' plugin using cli-6.0.0
+Phonegap Build example for core plugin Cordova 'Network-information' using `cli-6.0.0`.
 
-*https://www.npmjs.com/package/cordova-plugin-network-information
-<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
+This app uses the Cordova 'Device' & 'Network-information' plugin.
 
+* https://www.npmjs.com/package/cordova-plugin-device
+* https://www.npmjs.com/package/cordova-plugin-network-information
+
+## Events
+
+* offline
+* online
+
+## Properties
+
+* connection.type
+
+### Constants
+
+* Connection.UNKNOWN
+* Connection.ETHERNET
+* Connection.WIFI
+* Connection.CELL_2G
+* Connection.CELL_3G
+* Connection.CELL_4G
+* Connection.CELL
+* Connection.NONE
