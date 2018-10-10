@@ -16,7 +16,9 @@ var networkInformationPlugin = {
         document.addEventListener("offline", networkInformationPlugin.onOffline, false);
         document.addEventListener("online", networkInformationPlugin.onOnline, false);
         //
-        networkInformationPlugin.updateConnectionState()
+        document.getElementById('updateNetStatus').addEventListener('touchend', networkInformationPlugin.updateConnectionState, false);
+        //
+        networkInformationPlugin.updateConnectionState();
     },
     //
     updateConnectionState : function () {
@@ -32,7 +34,7 @@ var networkInformationPlugin = {
         states[Connection.CELL]     = 'Cell generic connection';
         states[Connection.NONE]     = 'No network connection';
 
-        document.getElementById(networkInformationPlugin.connectTypeId).innerHTML = states[networkState]
+        document.getElementById(networkInformationPlugin.connectTypeId).innerHTML = states[networkState];
     },
     //
     onOffline : function () {
