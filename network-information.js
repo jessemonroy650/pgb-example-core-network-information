@@ -11,9 +11,12 @@ var networkInformationPlugin = {
     //
     hook : function (statusId, connectId) {
         document.getElementById('status0').innerHTML = "hook() called";
-        //
+
+        //  on screen <span>s that maintains the network information
         networkInformationPlugin.connectStatusId = statusId;
         networkInformationPlugin.connectTypeId   = connectId;
+
+        //  event listener hooks
         document.addEventListener("offline", networkInformationPlugin.onOffline, false);
         document.addEventListener("online", networkInformationPlugin.onOnline, false);
 
