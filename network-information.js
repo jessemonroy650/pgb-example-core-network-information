@@ -16,8 +16,13 @@ var networkInformationPlugin = {
         networkInformationPlugin.connectTypeId   = connectId;
         document.addEventListener("offline", networkInformationPlugin.onOffline, false);
         document.addEventListener("online", networkInformationPlugin.onOnline, false);
-        //
-        networkInformationPlugin.updateConnectionState();
+
+        // force the on screen display
+        if (navigator.connection.type != Connection.NONE) {
+            networkInformationPlugin.onOnline();
+        } else {
+            networkInformationPlugin.onOffline();
+        }
     },
     //
     updateConnectionState : function () {
