@@ -16,7 +16,6 @@ var networkInformationPlugin = {
         networkInformationPlugin.connectTypeId   = connectId;
         document.addEventListener("offline", networkInformationPlugin.onOffline, false);
         document.addEventListener("online", networkInformationPlugin.onOnline, false);
-        document.getElementById('status0').innerHTML = "hooks in place";
         //
         networkInformationPlugin.updateConnectionState();
     },
@@ -24,8 +23,6 @@ var networkInformationPlugin = {
     updateConnectionState : function () {
         var networkState = navigator.connection.type;
         var states = {};
-
-        document.getElementById('status0').innerHTML = "updateConnectionState() called";
 
         states[Connection.UNKNOWN]  = 'Unknown connection';
         states[Connection.ETHERNET] = 'Ethernet connection';
@@ -41,10 +38,12 @@ var networkInformationPlugin = {
     //
     onOffline : function () {
         document.getElementById(networkInformationPlugin.connectStatusId).innerHTML = 'Offline';
+        networkInformationPlugin.updateConnectionState();
     },
     //
     onOnline : function () {
         document.getElementById(networkInformationPlugin.connectStatusId).innerHTML = 'Online';
+        networkInformationPlugin.updateConnectionState();
     }
     //
 }
