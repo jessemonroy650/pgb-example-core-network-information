@@ -44,7 +44,7 @@ var networkInformationPlugin = {
     //
     onOnline : function () {
         document.getElementById(networkInformationPlugin.connectStatusId).innerHTML = 'Online';
-        document.getElementById(networkInformationPlugin.connectStatusId).setAttribute("style", "backgroundColor:#22ff44;");
+        document.getElementById(networkInformationPlugin.connectStatusId).setAttribute("style", "background-color:#22ff44;");
         networkInformationPlugin.updateConnectionState();
     }
     //
