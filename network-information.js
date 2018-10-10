@@ -16,14 +16,14 @@ var networkInformationPlugin = {
         document.addEventListener("offline", networkInformationPlugin.onOffline, false);
         document.addEventListener("online", networkInformationPlugin.onOnline, false);
         //
-        document.getElementById('updateNetStatus').addEventListener('touchend', networkInformationPlugin.updateConnectionState, false);
-        //
         networkInformationPlugin.updateConnectionState();
     },
     //
     updateConnectionState : function () {
         var networkState = navigator.connection.type;
         var states = {};
+
+        document.getElementById('status0').innerHTML = "updateConnectionState() called";
 
         states[Connection.UNKNOWN]  = 'Unknown connection';
         states[Connection.ETHERNET] = 'Ethernet connection';
